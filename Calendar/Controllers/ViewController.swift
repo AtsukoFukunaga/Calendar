@@ -27,6 +27,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var dayCounter = 0
     
+    var highlightDate = -1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        highlightDate = -1
         
         switch currentMonth {
             
@@ -68,6 +72,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
+        
+        highlightDate = -1
         
         switch currentMonth {
             
@@ -164,6 +170,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCollectionViewCell
         cell.backgroundColor = UIColor.clear
         
+        cell.dateLabel.layer.cornerRadius = cell.dateLabel.frame.size.width / 2
+        cell.dateLabel.clipsToBounds = true
+        
         if cell.dateLabel.isHidden == true {
             cell.dateLabel.isHidden = false
         }
@@ -200,12 +209,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         if currentMonth == months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == indexPath.row + 1 {
-            cell.dateLabel.backgroundColor = UIColor.lightGray
+            cell.dateLabel.backgroundColor = UIColor.gray
         } else {
             cell.dateLabel.backgroundColor = UIColor.clear
         }
         
+        if indexPath.row == highlightDate {
+            cell.backgroundColor = UIColor.lightGray
+        }
+        
         return cell
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        highlightDate = indexPath.row
+        calendarCollectionView.reloadData()
         
     }
 
