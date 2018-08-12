@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var Calendar: UICollectionView!
-    @IBOutlet weak var MonthLabel: UILabel!
+    @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 //    let dayOfMonth = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         currentMonth = months[month - 1]
-        MonthLabel.text = "\(currentMonth) \(year)"
+        monthLabel.text = "\(currentMonth) \(year)"
         
         getStartDateDayPosition()
         
@@ -132,8 +132,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func updateMonthLabel() {
         
         currentMonth = months[month - 1]
-        MonthLabel.text = "\(currentMonth) \(year)"
-        Calendar.reloadData()
+        monthLabel.text = "\(currentMonth) \(year)"
+        calendarCollectionView.reloadData()
         
     }
     
@@ -164,45 +164,45 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCollectionViewCell
         cell.backgroundColor = UIColor.clear
         
-        if cell.DateLabel.isHidden == true {
-            cell.DateLabel.isHidden = false
+        if cell.dateLabel.isHidden == true {
+            cell.dateLabel.isHidden = false
         }
         
         switch direction {
             
         case 0:
-            cell.DateLabel.text = "\(indexPath.row + 1 - numberOfEmptyBox)"
+            cell.dateLabel.text = "\(indexPath.row + 1 - numberOfEmptyBox)"
         
         case 1...:
-            cell.DateLabel.text = "\(indexPath.row + 1 - nextNumberOfEmptyBox)"
+            cell.dateLabel.text = "\(indexPath.row + 1 - nextNumberOfEmptyBox)"
         
         case -1:
-            cell.DateLabel.text = "\(indexPath.row + 1 - previousNumberOfEmptyBox)"
+            cell.dateLabel.text = "\(indexPath.row + 1 - previousNumberOfEmptyBox)"
         
         default:
             fatalError()
             
         }
         
-        if let dateCellLabel = cell.DateLabel.text {
+        if let dateCellLabel = cell.dateLabel.text {
             if Int(dateCellLabel)! <= 0 {
-                cell.DateLabel.isHidden = true
+                cell.dateLabel.isHidden = true
             }
         }
         
         switch indexPath.row {
             
         case 0, 6, 7, 13, 14, 20, 21, 27, 28, 34, 35:
-            cell.DateLabel.textColor = UIColor.red
+            cell.dateLabel.textColor = UIColor.red
         
         default:
-            cell.DateLabel.textColor = UIColor.black
+            cell.dateLabel.textColor = UIColor.black
         }
         
         if currentMonth == months[calendar.component(.month, from: date) - 1] && year == calendar.component(.year, from: date) && day == indexPath.row + 1 {
-            cell.DateLabel.backgroundColor = UIColor.lightGray
+            cell.dateLabel.backgroundColor = UIColor.lightGray
         } else {
-            cell.DateLabel.backgroundColor = UIColor.clear
+            cell.dateLabel.backgroundColor = UIColor.clear
         }
         
         return cell
@@ -214,7 +214,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = Calendar.frame.width / 7
+        let width: CGFloat = calendarCollectionView.frame.width / 7
         let height = width
         return CGSize(width: width, height: height)
     }

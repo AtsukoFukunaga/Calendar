@@ -14,7 +14,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -87,7 +86,7 @@
                                         <rect key="frame" x="20" y="0.0" width="280" height="112"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJC-z7-L9i" userLabel="Next Button">
-                                                <rect key="frame" x="232" y="32" width="48" height="48"/>
+                                                <rect key="frame" x="232" y="32.5" width="48" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="48" id="4Ev-HP-o9A"/>
                                                     <constraint firstAttribute="height" constant="48" id="9SX-CM-GHC"/>
@@ -99,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gy-HU-Qg3">
-                                                <rect key="frame" x="48" y="32" width="184" height="48"/>
+                                                <rect key="frame" x="48" y="32.5" width="184" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="eCr-0x-jBp"/>
                                                 </constraints>
@@ -108,7 +107,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-96-6nY" userLabel="Back Button">
-                                                <rect key="frame" x="0.0" y="32" width="48" height="48"/>
+                                                <rect key="frame" x="0.0" y="32.5" width="48" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="fgF-mO-Gjp"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="48" id="rUD-jy-kzZ"/>
@@ -165,7 +164,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-Yo-Iux">
                                                             <rect key="frame" x="31" y="31.5" width="38" height="38"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="38" id="pog-l7-mc8"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="pog-l7-mc8"/>
                                                                 <constraint firstAttribute="height" constant="38" id="w3P-Cp-xzN"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -212,10 +211,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Calendar" destination="tuZ-KR-yHN" id="VL5-sn-MEv"/>
                         <outlet property="MonthLabel" destination="2Gy-HU-Qg3" id="yPj-V2-I7z"/>
+                        <outlet property="calendarCollectionView" destination="tuZ-KR-yHN" id="O7z-If-qbW"/>
+                        <outlet property="monthLabel" destination="2Gy-HU-Qg3" id="g1Q-WC-sip"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1" y="-81"/>
         </scene>
