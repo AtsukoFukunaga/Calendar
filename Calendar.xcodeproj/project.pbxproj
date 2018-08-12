@@ -14,6 +14,7 @@
 		A150EA76211F579000973772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A150EA74211F579000973772 /* LaunchScreen.storyboard */; };
 		A150EA7E211F5C6F00973772 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150EA7D211F5C6F00973772 /* DateCollectionViewCell.swift */; };
 		A150EA80211F6DF400973772 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150EA7F211F6DF400973772 /* CalendarVars.swift */; };
+		A1DB11FB2120F80A00A2C3BD /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB11FA2120F80A00A2C3BD /* NextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A150EA77211F579000973772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A150EA7D211F5C6F00973772 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		A150EA7F211F6DF400973772 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarVars.swift; path = "/Users/atsukofukunaga/Documents/App_development/Apps/Calendar/Calendar/Data Model/CalendarVars.swift"; sourceTree = "<absolute>"; };
+		A1DB11FA2120F80A00A2C3BD /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		A1DB11F82120DB5B00A2C3BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1DB11FA2120F80A00A2C3BD /* NextViewController.swift */,
 				A150EA6D211F578F00973772 /* ViewController.swift */,
 				A150EA7D211F5C6F00973772 /* DateCollectionViewCell.swift */,
 			);
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DB11FB2120F80A00A2C3BD /* NextViewController.swift in Sources */,
 				A150EA6E211F578F00973772 /* ViewController.swift in Sources */,
 				A150EA7E211F5C6F00973772 /* DateCollectionViewCell.swift in Sources */,
 				A150EA6C211F578F00973772 /* AppDelegate.swift in Sources */,

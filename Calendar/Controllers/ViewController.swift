@@ -228,6 +228,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         highlightDate = indexPath.row
         calendarCollectionView.reloadData()
         
+        performSegue(withIdentifier: "nextView", sender: self)
+        
     }
 
 }
