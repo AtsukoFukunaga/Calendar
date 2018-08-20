@@ -90,9 +90,9 @@
 		A1DB11F82120DB5B00A2C3BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A1DB11FA2120F80A00A2C3BD /* NextViewController.swift */,
 				A150EA6D211F578F00973772 /* ViewController.swift */,
 				A150EA7D211F5C6F00973772 /* DateCollectionViewCell.swift */,
+				A1DB11FA2120F80A00A2C3BD /* NextViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
